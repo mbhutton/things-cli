@@ -139,6 +139,7 @@ class ThingsCLI:  # pylint: disable=too-many-instance-attributes
             fieldnames.remove("items")
         if "checklist" in fieldnames:
             fieldnames.remove("checklist")
+        fieldnames.sort()  # Because task content affects the order that fields are discovered above
 
         output = StringIO()
         writer = csv.DictWriter(
